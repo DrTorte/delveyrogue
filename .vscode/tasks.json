@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "webpack",
+            "type": "shell",
+            "command": "webpack-dev-server --watch"
+        },
+        {
+            "label": "copy assets",
+            "type": "shell",
+            "command": "cp -R assets dist/"
+        },
+        {
+            "label": "test",
+            "dependsOn":["copy assets", "webpack"]
+        }
+    ]
+}
